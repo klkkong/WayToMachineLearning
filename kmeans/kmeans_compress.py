@@ -16,7 +16,7 @@ cols = image.shape[1]
 
 image = image.reshape(image.shape[0] * image.shape[1], 3)  # 3 代表三个颜色通道，是彩色图
 # reshape 之后，变成 n 行 3 列的矩阵，每一行都是一个样本点，分别是各自红黄蓝三种颜色通道的值
-kmeans = KMeans(n_clusters=8, n_init=10, max_iter=200)  # 分成 128 个簇
+kmeans = KMeans(n_clusters=128, n_init=10, max_iter=200)  # 分成 128 个簇
 kmeans.fit(image)
 
 clusters = np.asarray(kmeans.cluster_centers_, dtype=np.uint8)
