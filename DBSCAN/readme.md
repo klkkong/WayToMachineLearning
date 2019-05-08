@@ -23,7 +23,8 @@ Linux, g++ 4.8.2
 1. 这个程序写的比较糟糕，里面一些变量定义但是没用到，全局变量太多，没有统一为结构体，这些都是可以优化的
 2. 结构体Cluster中包含vector，需要注意，vector是c++中的对象，而不是内存，所以对Cluster不能使用malloc和memset这些对内存操作的函数。而应该用new。[资料](https://zhidao.baidu.com/question/483251763.html?from=pubpage&msgtype=2)
 3. 还有两种可以加速计算的方法：MPI & CUDA，这个可以以后更新。
-4. 对于数据集分布不均匀的体系，使用DBSCAN的效果并不好。下图是用skin=2, minpts=5得到的结果。可以看出，在当前的参数下，存在一个超大的聚团。![cluster.png](https://i.loli.net/2019/05/08/5cd26f238c2a4.png)
+4. 对于数据集分布不均匀的体系，使用DBSCAN的效果并不好。下图是用skin=2, minpts=5得到的结果。可以看出，在当前的参数下，存在一个超大的聚团。
+![cluster.png](https://i.loli.net/2019/05/08/5cd26f238c2a4.png)
 
 
 
